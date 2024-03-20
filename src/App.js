@@ -7,6 +7,7 @@ import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
 import PostCreateForm from "./pages/posts/PostCreateForm";
 import PostPage from "./pages/posts/PostPage";
+import PostsPage from "./pages/posts/PostsPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 
 function App() {
@@ -22,14 +23,14 @@ function App() {
             exact
             path="/"
             render={() => (
-            <PostSPage message="No results found. Adjust the search keyword." />
+            <PostsPage message="No results found. Adjust the search keyword." />
             )} 
           />
           <Route
             exact
             path="/feed"
             render={() => (
-            <PostSPage message="No results found. Adjust the search keyword or follow a user."
+            <PostsPage message="No results found. Adjust the search keyword or follow a user."
             filter={`owner__followed__owner__profile=${profile_id}&`}
             />
             )} 
@@ -38,7 +39,7 @@ function App() {
             exact
             path="/liked"
             render={() => (
-            <PostSPage message="No results found. Adjust the search keyword or like a post."
+            <PostsPage message="No results found. Adjust the search keyword or like a post."
             filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
             />
             )} 
