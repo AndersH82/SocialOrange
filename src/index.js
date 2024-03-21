@@ -9,7 +9,9 @@ import { CurrentUserProvider } from "./contexts/CurrentUserContext";
 ReactDOM.render(
     <Router>
       <CurrentUserProvider>
-        <App />
+        <ProfileDataProvider>
+          <App />
+        </ProfileDataProvider>
       </CurrentUserProvider>
     </Router>,
   document.getElementById("root")

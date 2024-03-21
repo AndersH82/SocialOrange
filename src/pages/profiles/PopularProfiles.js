@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
-import { axiosReq } from "../../api/axiosDefaults";
 import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { useProfileData } from "../../contexts/ProfileDataContext";
+import Profile from "./Profile";
 
 const PopularProfiles = ({ mobile }) => {
   const [profileData, setProfileData] = useState({
-    // we will use the pageProfile later!
+    
     pageProfile: { results: [] },
     popularProfiles: { results: [] },
   });
