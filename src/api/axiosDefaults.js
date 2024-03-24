@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = 'https://socialorangeapi-6ce409532368.herokuapp.com';
+axios.defaults.baseURL = 'https://8000-andersh82-drfworkspace-qu6lqgebckx.ws-eu110.gitpod.io/';
 axios.defaults.headers.post['Content-Type'] = 'multipart/form-data';
 axios.defaults.withCredentials = true;
 
