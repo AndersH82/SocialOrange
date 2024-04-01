@@ -134,10 +134,10 @@ Implementation:
 
 ## How to get started
 
-- Create an Account: Sign up with your email or social media account to get started.
+- Create an Account: Sign up with your username you want to have to get started.
 - Customize Your Profile: Add a profile picture, bio, and interests to personalize your profile and make it easier for others to find you.
 - Explore and Connect: Browse through posts, comment on those that interest you, and don't forget to like the ones you enjoy.
-- Engage with the Community: Follow friends, join groups, and participate in discussions to become an active member of our community.
+- Engage with the Community: Follow friends and participate in discussions to become an active member of our community.
 ## Installation
 
 - Install Git: First, you need to have Git installed on your system. If you're using Debian or Ubuntu, you can install Git by running the following commands in your terminal:
@@ -229,6 +229,7 @@ I have tried to fix these errors, but I cannot remove them.
 
 
 ## Join us today
+
 We invite you to join our community and be a part of the fun. Whether you're looking to share your experiences, connect with friends, or simply explore new content, our platform is here to support you. Let's make the most of our shared moments and create a community that's both supportive and inspiring.
 
 ## Acknowledgements
