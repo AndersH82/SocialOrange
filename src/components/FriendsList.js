@@ -2,27 +2,33 @@ import React, { useEffect, useState } from 'react';
 import { getFriendsList } from '../services/friendshipService';
 
 const FriendsList = () => {
- const [friends, setFriends] = useState([]);
+  const [friends, setFriends] = useState([]);
 
- useEffect(() => {
+  useEffect(() => {
     const fetchFriends = async () => {
-      const response = await getFriendsList();
-      setFriends(response.data);
+      try {
+        const response = await getFriendsList();
+        if (Array.isArray(response.data)) {
+          setFriends(response.data);
+        } else {
+          setFriends([]);
+        }
+      } catch (error) {
+        console.error('Error fetching friends:', error);
+        setFriends([]);
+      }
     };
 
     fetchFriends();
- }, []);
+  }, []);
 
- return (
+  return (
     <div>
-      <h2>Friends List</h2>
-      <ul>
-        {friends.map(friend => (
-          <li key={friend.id}>{friend.user.username}</li>
-        ))}
-      </ul>
+      {friends.map((friend) => (
+        <div key={friend.id}>{friend.name}</div>
+      ))}
     </div>
- );
+  );
 };
 
 export default FriendsList;

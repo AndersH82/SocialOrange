@@ -15,6 +15,7 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import NotFound from './components/NotFound';
+import FriendsPage from './pages/friends/FriendsPage';
 
 
 function App() {
@@ -57,7 +58,7 @@ function App() {
             exact
             path="/friends"
             render={() => (
-              <PostsPage message="No results friends found." />
+              <FriendsPage />
             )}
           />
           <Route exact path="/signin" render={() => <SignInForm />} />
