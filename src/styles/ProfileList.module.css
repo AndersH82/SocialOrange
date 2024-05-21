@@ -1,0 +1,32 @@
+.Profile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Profile img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.Profile h3 {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #333;
+}
+
+.Profile a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.Profile a:hover {
+  text-decoration: underline;
+}
+
+.ProfilesHeader {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+}

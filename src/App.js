@@ -15,12 +15,15 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import NotFound from './components/NotFound';
-import FriendsPage from './pages/friends/FriendsPage';
+import ProfileList from './pages/profiles/ProfileList';
+
 
 
 function App() {
   const currentUser = useCurrentUser();
   const profile_id = currentUser?.profile_id || "";
+
+  
 
   return (
     <div className={styles.App}>
@@ -56,9 +59,9 @@ function App() {
           />
           <Route
             exact
-            path="/friends"
+            path="/profilelist"
             render={() => (
-              <FriendsPage />
+              <ProfileList />
             )}
           />
           <Route exact path="/signin" render={() => <SignInForm />} />
@@ -66,6 +69,7 @@ function App() {
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
+          <Route exect path="/profiles" render={() => <ProfileList />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route
             exact
