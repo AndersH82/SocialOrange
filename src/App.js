@@ -9,13 +9,14 @@ import PostCreateForm from "./pages/posts/PostCreateForm";
 import PostPage from "./pages/posts/PostPage";
 import PostsPage from "./pages/posts/PostsPage";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
+import ProfileList from './pages/profiles/ProfileList';
 import PostEditForm from "./pages/posts/PostEditForm";
 import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import NotFound from './components/NotFound';
-import ProfileList from './pages/profiles/ProfileList';
+
 
 
 
@@ -69,7 +70,7 @@ function App() {
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
-          <Route exect path="/profiles" render={() => <ProfileList />} />
+          <Route exect path="/profiles/ :id" render={() => <ProfileList />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route
             exact

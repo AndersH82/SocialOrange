@@ -24,7 +24,7 @@ import Post from "../posts/Post";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/search.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
-import { Link } from 'react-router-dom';
+
 
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -71,17 +71,7 @@ function ProfilePage() {
             src={profile?.image}
           />
         </Col>
-        <div>
-          <Link to="../components/SendFriendRequest.js">
-          <button className={`${btnStyles.Button} ${btnStyles.Black}`} style={{ display: 'block' }}>Add</button>
-          </Link>
-        </div>
         
-        <div>
-          <Link to="../components/DeleteUser.js">
-          <button className={`${btnStyles.Button} ${btnStyles.Black}`} style={{ display: 'block' }}>Delete</button>
-          </Link>
-        </div>
         <Col lg={6}>
           <h3 className="m-2">{profile?.owner}</h3>
           <Row className="justify-content-center no-gutters">
