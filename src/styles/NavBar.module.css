@@ -10,3 +10,13 @@
 .Active i {
     color: #ff9254;
 }
+
+.ClockContainer {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+    position: relative;
+    width: 100px;
+    justify-content: center;
+}

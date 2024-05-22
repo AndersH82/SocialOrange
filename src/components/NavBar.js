@@ -11,7 +11,7 @@ import Avatar from "./Avatar";
 import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 import { removeTokenTimestamp } from "../utils/utils";
-
+import Clock from "./Clock";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -119,8 +119,10 @@ const NavBar = () => {
             >
               <i className="fas fa-home"></i>Home
             </NavLink>
-
             {currentUser ? loggedInIcons : loggedOutIcons}
+            <div className={styles.ClockContainer}>
+              <Clock />
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>
