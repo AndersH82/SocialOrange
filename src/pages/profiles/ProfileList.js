@@ -42,23 +42,28 @@ const ProfileList = () => {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <PopularProfiles mobile />
         <Form className={styles.SearchBar} onSubmit={(event) => event.preventDefault()}>
-        <i className={`fas fa-search ${styles.SearchIcon}`} />
-            <Form.Control
-              type="text"
-              placeholder="Search profiles"
-              value={searchQuery}
-              onChange={handleSearch}
-              className="mr-sm-2"
-            />
-          </Form>
+          <i className={`fas fa-search ${styles.SearchIcon}`} />
+          <Form.Control
+            type="text"
+            placeholder="Search profiles"
+            value={searchQuery}
+            onChange={handleSearch}
+            className="mr-sm-2"
+          />
+        </Form>
         <Container className={appStyles.Content}>
           {loading ? (
             <Asset spinner />
           ) : (
-            <>
-              <InfiniteScroll
-                children={filteredProfiles.map((profile) => (
-                  <div key={profile.id} className="my-3 d-flex align-items-center">
+            <InfiniteScroll
+              dataLength={filteredProfiles.length}
+              loader={<Asset spinner />}
+              hasMore={!!profiles.next}
+              next={() => fetchMoreData(profiles, setProfiles)}
+            >
+              <div className={styles.ProfileGrid}>
+                {filteredProfiles.map((profile) => (
+                  <div key={profile.id} className={styles.ProfileItem}>
                     <div>
                       <Link className="align-self-center" to={`/profiles/${profile.id}`}>
                         <Image src={profile.image} roundedCircle height={55} />
@@ -69,12 +74,8 @@ const ProfileList = () => {
                     </div>
                   </div>
                 ))}
-                dataLength={filteredProfiles.length}
-                loader={<Asset spinner />}
-                hasMore={!!profiles.next}
-                next={() => fetchMoreData(profiles, setProfiles)}
-              />
-            </>
+              </div>
+            </InfiniteScroll>
           )}
         </Container>
       </Col>
