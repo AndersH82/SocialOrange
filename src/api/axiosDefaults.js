@@ -6,10 +6,3 @@ axios.defaults.withCredentials = true;
 
 export const axiosReq = axios.create();
 export const axiosRes = axios.create();
-
-const axiosInstance = axios.create({
-    baseURL: "https://socialorangeapi-e92b8d7040bd.herokuapp.com",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
