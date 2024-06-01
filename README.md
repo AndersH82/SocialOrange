@@ -5,139 +5,40 @@ SocialOrange
 
 ![Alt text](readmeimages/amiresponsive.png)
 
+SocialOrange is a vibrant social media platform designed to bring people together, share moments, and foster meaningful connections. It features profile creation, content sharing, comments, and friend connections. The platform also plans to introduce future functions like blocking users and direct chat with friends.
+
 ## Table of Contents
-- [Introduction](#introduction)
-- [Content](#content)
-    - [Wireframe](#wireframe)
-    - [FeaturesPictures](#featurepictures)
-    - [Colorsheme](#colorsheme)
-    - [Language](#language)
-- [Features](#features)
+
+- [Getting Started](#getting-started)
 - [Installation](#installation)
-- [Api](#api)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [React Component Usage](#react-component-usage)
+- [API](#api)
 - [Tests](#tests)
-     - [Validation](#validation)
-- [Bugs/Errors](#bugs/errors)
-- [Program Used](#programused)
+- [Deployment](#deployment)
+- [Configuration](#configuration)
 - [Credits](#credits)
+- [Wireframe](#wireframe)
+- [Features Pictures](#features-pictures)
+- [Color Scheme](#color-scheme)
+- [Language](#language)
+- [Features](#features)
+- [Future Functions](#future-functions)
+- [Validations](#validations)
+- [Bugs/Errors](#bugs-errors)
+- [Program Used](#program-used)
 - [Acknowledgements](#acknowledgements)
 
-## Introduction
+## Getting Started
 
-Welcome to our vibrant social media platform SocialOrange, designed to bring people together, share moments, and foster meaningful connections. Our platform is more than just a place to post pictures and comments; it's a community where you can make friends, like pictures, and much more.
+To get started with SocialOrange, follow these steps:
 
-## Content
+1. Create an account by signing up with a desired username.
+2. Customize your profile by adding a profile picture, bio, and interests.
+3. Explore and connect with others by browsing through posts, commenting on interesting content, and participating in discussions.
+4. Engage with the community by following friends and participating in discussions to become an active member.
 
-### Wireframe
-
-Sign up        |  Sign in
-:-------------------------:|:-------------------------:
-![Sign up](readmeimages/page1.png)  |  ![Sign in](readmeimages/page2.png)
-
-Profile        |  Home
-:-------------------------:|:-------------------------:
-![Profile](readmeimages/page4.png)  |  ![Home](readmeimages/page3.png)
-<div align="center" style="font-size:20px;">
-Post
-</div>
-<p align="center">
-  <img src="readmeimages/page6.png" alt="mobile view">
-</p> 
-<div align="center" style="font-size:20px;">
-Mobile view
-</div>
-<p align="center">
-  <img src="readmeimages/page5.png" alt="mobile view">
-</p>
-
-
-### Feature pictures
-
-Sign up        |  Sign in
-:-------------------------:|:-------------------------:
-![Sign up](readmeimages/signuppage.png)  |  ![Sign in](readmeimages/signinpage.png)
-
-Profile        |  Home
-:-------------------------:|:-------------------------:
-![Profile](readmeimages/profilepage.png)  |  ![Home](readmeimages/homepage.png)
-
-<div align="center" style="font-size:20px;">
-Post
-</div>      
-
-![Profile](readmeimages/uploadpage.png)
-<div align="center" style="font-size:20px;">
-Mobile view
-</div>
-<p align="center">
-  <img src="readmeimages/mobilepage.png" alt="mobile view">
-</p>
-
-## Colorsheme
-
-<div align="center" style="font-size:20px;">
-Colorsheme
-</div>
-<p align="center">
-  <img src="readmeimages/colorsheme.png" alt="colorsheme">
-</p>
-
-## Language
-
-<div align="center" style="font-size:20px;">
-Language
-</div>
-<p align="center">
-  <img src="readmeimages/language.png" alt="language">
-</p>
-
-## Features
-
-- Post Pictures: Share your life's moments with the world. Whether it's a    beautiful sunset, a delicious meal, or a funny meme, our platform is the perfect place to showcase your creativity and personality.
-- Comments: Engage with your friends and the community. Leave comments on posts, share your thoughts, and start conversations.
-- Make Friends: Connect with like-minded individuals from around the globe. Explore profiles, send friend requests, and build a network of friends.
-- Like Pictures: Express your appreciation for others' content. Like posts that inspire you, make you smile, or simply make you feel good.
-
-### Future functions
-
-Block users
-
-We are planning to introduce a feature that allows users to block other users. This feature will enable users to prevent unwanted interactions and maintain a safe and respectful environment within the community.
-
-Benefits:
-
-- Enhances user safety and privacy.
-- Reduces distractions and spam.
-- Improves the overall user experience by focusing on meaningful interactions.
-
-Implementation:
-
-- Users will have the option to block other users directly from their profiles.
-- Blocked users will not be able to send messages, comments, or access personal information of the blocked user.
-- Admins will have the ability to review and manage block requests to ensure fairness and compliance with community guidelines.
-
-Direct Chat with friends
-
-We aim to introduce a direct chat feature that allows users to communicate privately with their friends or colleagues. This feature will facilitate quick and confidential discussions, enhancing collaboration and support within the community.
-
-Benefits:
-
-- Facilitates quick and confidential communication.
-- Enhances collaboration and support among friends and colleagues.
-- Reduces the need for public discussions, ensuring privacy and confidentiality.
-
-Implementation:
-
-- Users will be able to initiate a direct chat with friends or colleagues from their profile or within the community.
-- Direct chats will be accessible only to the participants, ensuring privacy and confidentiality.
-- Users will have the option to share chat history with friends or colleagues for future reference or collaboration.
-
-## How to get started
-
-- Create an Account: Sign up with your username you want to have to get started.
-- Customize Your Profile: Add a profile picture, bio, and interests to personalize your profile and make it easier for others to find you.
-- Explore and Connect: Browse through posts, comment on those that interest you, and don't forget to like the ones you enjoy.
-- Engage with the Community: Follow friends and participate in discussions to become an active member of our community.
 ## Installation
 
 - Install Git: First, you need to have Git installed on your system. If you're using Debian or Ubuntu, you can install Git by running the following commands in your terminal:
@@ -175,10 +76,84 @@ git pull
 
 - Remember, if you're working with a repository that requires two-factor authentication (2FA), you might need to use SSH instead of HTTPS for cloning and pushing changes
 
+## Usage
+
+To run the application in development mode, use the following command:
+```bash
+npm start
+```
+This will start the application and open it in your default web browser.
+
+To build the application for production, use the following command:
+```bash
+npm run build
+```
+This will create a `build` folder with the production-ready files.
+
+## Project Structure
+
+```
+The project's overall structure is well-organized with a clear separation of concerns. Here is an overview of the key directories and files:
+socialorange/
+├── public/
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+├── readmeimages/
+│   └── (visual assets related to the project)
+├── src/
+│   ├── api/
+│   │   └── axiosDefaults.js
+│   ├── assets/
+│   │   └── (image assets)
+│   ├── components/
+│   │   ├── Asset.js
+│   │   ├── Avatar.js
+│   │   └── NavBar.js
+│   ├── contexts/
+│   │   └── (context files for state management)
+│   ├── hooks/
+│   │   └── (custom React hooks)
+│   ├── pages/
+│   │   ├── auth/
+│   │   ├── comments/
+│   │   ├── friends/
+│   │   ├── posts/
+│   │   └── profiles/
+│   ├── styles/
+│   │   └── (CSS files for styling)
+│   └── utils/
+│       └── (utility functions or classes)
+├── .eslintrc.js
+├── .gitignore
+├── package.json
+├── README.md
+└── (other configuration files)
+```
+
+## React Component Usage
+
+The main components used in the application include:
+
+- `NavBar`: The navigation bar component.
+- `SignInForm`: The sign-in form component.
+- `SignUpForm`: The sign-up form component.
+- `PostsPage`: The posts page component.
+- `PostPage`: The post detail page component.
+- `PostEditForm`: The post edit form component.
+- `ProfilePage`: The profile page component.
+- `ProfileEditForm`: The profile edit form component.
+- `UsernameForm`: The username edit form component.
+- `UserPasswordForm`: The user password edit form component.
+- `ProfileList`: The profile list component.
+- `NotFound`: The not found page component.
+
 ## API
 
 - When you have cloned the SocialOrange repository, you should clone another repository and that is SocialOrange-api and it can be found here: ``https://github.com/AndersH82/socialorange-api.git``
-
 
 **How the API Django Rest Framwork works**
 
@@ -194,13 +169,147 @@ Django REST Framework (DRF) is a powerful toolkit designed to simplify the proce
 
 - Development and Deployment: DRF simplifies the development cycle of an application, from creating models and serializers to setting up views and URLs. It also supports test-driven development, allowing developers to build robust and secure APIs efficiently. Once developed, DRF APIs can be deployed using various methods, including Docker, to ensure they are accessible to clients.
 
-
 ## Tests
+
+The project includes tests for validation, such as HTML and CSS validation. To run the tests, use the following command:
+```bash
+npm test
+```
 
 ### Validation
 - HTML https://validator.w3.org/nu/?doc=https%3A%2F%2Fsocialorange-8e2adf553f1c.herokuapp.com%2F
 
 - CSS https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fsocialorange-8e2adf553f1c.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv
+
+## Deployment
+
+The project is deployed using Heroku. To deploy the application, follow these steps:
+
+1. Install the Heroku CLI.
+2. Log in to your Heroku account:
+   ```bash
+   heroku login
+   ```
+3. Create a new Heroku application:
+   ```bash
+   heroku create
+   ```
+4. Push the code to Heroku:
+   ```bash
+   git push heroku main
+   ```
+
+## Configuration
+
+The project includes several configuration settings:
+
+- `Browserslist`: Specifies the target browsers for the application.
+- `ESLintConfig`: Extends the base ESLint configuration for a React app and includes a custom configuration for Jest.
+- `Engines`: Specifies the required versions of Node.js and npm for the application.
+
+## Wireframe
+
+Sign up        |  Sign in
+:-------------------------:|:-------------------------:
+![Sign up](readmeimages/page1.png)  |  ![Sign in](readmeimages/page2.png)
+
+Profile        |  Home
+:-------------------------:|:-------------------------:
+![Profile](readmeimages/page4.png)  |  ![Home](readmeimages/page3.png)
+<div align="center" style="font-size:20px;">
+Post
+</div>
+<p align="center">
+  <img src="readmeimages/page6.png" alt="mobile view">
+</p> 
+<div align="center" style="font-size:20px;">
+Mobile view
+</div>
+<p align="center">
+  <img src="readmeimages/page5.png" alt="mobile view">
+</p>
+
+## Features Pictures
+
+Sign up        |  Sign in
+:-------------------------:|:-------------------------:
+![Sign up](readmeimages/signuppage.png)  |  ![Sign in](readmeimages/signinpage.png)
+
+Profile        |  Home
+:-------------------------:|:-------------------------:
+![Profile](readmeimages/profilepage.png)  |  ![Home](readmeimages/homepage.png)
+
+<div align="center" style="font-size:20px;">
+Post
+</div>      
+
+![Profile](readmeimages/uploadpage.png)
+<div align="center" style="font-size:20px;">
+Mobile view
+</div>
+<p align="center">
+  <img src="readmeimages/mobilepage.png" alt="mobile view">
+</p>
+
+## Color Scheme
+
+<div align="center" style="font-size:20px;">
+Colorsheme
+</div>
+<p align="center">
+  <img src="readmeimages/colorsheme.png" alt="colorsheme">
+</p>
+
+## Language
+
+<div align="center" style="font-size:20px;">
+Language
+</div>
+<p align="center">
+  <img src="readmeimages/language.png" alt="language">
+</p>
+
+## Features
+
+- Post Pictures: Share your life's moments with the world. Whether it's a    beautiful sunset, a delicious meal, or a funny meme, our platform is the perfect place to showcase your creativity and personality.
+- Comments: Engage with your friends and the community. Leave comments on posts, share your thoughts, and start conversations.
+- Make Friends: Connect with like-minded individuals from around the globe. Explore profiles, send friend requests, and build a network of friends.
+- Like Pictures: Express your appreciation for others' content. Like posts that inspire you, make you smile, or simply make you feel good.
+
+## Future functions
+
+Block users
+
+We are planning to introduce a feature that allows users to block other users. This feature will enable users to prevent unwanted interactions and maintain a safe and respectful environment within the community.
+
+Benefits:
+
+- Enhances user safety and privacy.
+- Reduces distractions and spam.
+- Improves the overall user experience by focusing on meaningful interactions.
+
+Implementation:
+
+- Users will have the option to block other users directly from their profiles.
+- Blocked users will not be able to send messages, comments, or access personal information of the blocked user.
+- Admins will have the ability to review and manage block requests to ensure fairness and compliance with community guidelines.
+
+Direct Chat with friends
+
+We aim to introduce a direct chat feature that allows users to communicate privately with their friends or colleagues. This feature will facilitate quick and confidential discussions, enhancing collaboration and support within the community.
+
+Benefits:
+
+- Facilitates quick and confidential communication.
+- Enhances collaboration and support among friends and colleagues.
+- Reduces the need for public discussions, ensuring privacy and confidentiality.
+
+Implementation:
+
+- Users will be able to initiate a direct chat with friends or colleagues from their profile or within the community.
+- Direct chats will be accessible only to the participants, ensuring privacy and confidentiality.
+- Users will have the option to share chat history with friends or colleagues for future reference or collaboration.
+
 
 ## Bugs/Errors
 
@@ -210,14 +319,19 @@ I have tried to fix these errors, but I cannot remove them.
   <img src="readmeimages/errors.png" alt="errors">
 </p>
 
+I have been able to access my app all the time until now but now I can't see everything in the app. Don't know what happened. 
+
+I get 401 and 404 errors and have tried to solve the problem but can't find a solution.
+
 ## Program Used
 
-- Gitpod - coding
-- Heroku - deployment
-- Github - web-based interface
-- Balsamiq Wireframe - make wireframe
-- Copilot AI - Make images
+The project uses the following programs and tools:
 
+- Gitpod for coding
+- Heroku for deployment
+- GitHub for a web-based interface
+- Balsamiq Wireframe for making wireframes
+- Copilot AI for creating images
 
 ## Credits
 
@@ -227,11 +341,6 @@ I have tried to fix these errors, but I cannot remove them.
 - Emil Jadersten_5P on Slack - Was of great help
 - Akshat_Garg_mentor on Slack - Mentor
 
-
-## Join us today
-
-We invite you to join our community and be a part of the fun. Whether you're looking to share your experiences, connect with friends, or simply explore new content, our platform is here to support you. Let's make the most of our shared moments and create a community that's both supportive and inspiring.
-
 ## Acknowledgements
 
-It's been incredibly hard hours trying to get this together as a beginner. This was really a test of programming knowledge. I have had to struggle a lot with this PP5 as it has not worked properly. Already when we made Moments and the DRF Framework in CI, it didn't work either and it meant that I had to spend many hours on error codes that no one could help with, not CI either. In the last hours before I have to hand in the project and do the last thing, my Heroku has stopped working because they want payment. I can't complete my Lighthouse tests and won't be able to finish my entire README. I don't know what will happen to my deployment, then you can't see it if it's not online. This would be free during the training. I also can't do all the tests that need to be done as I don't have access to Heroku and it has to be running if I'm going to get any responses from the API
+The project invites users to join the community and be a part of the fun, connecting with friends, sharing experiences, and exploring new content.
