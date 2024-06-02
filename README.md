@@ -13,6 +13,7 @@ SocialOrange is a vibrant social media platform designed to bring people togethe
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
+- [Front-End Libraries](#front-end-libraries)
 - [React Component Usage](#react-component-usage)
 - [API](#api)
 - [Tests](#tests)
@@ -134,22 +135,223 @@ socialorange/
 └── (other configuration files)
 ```
 
+## Front-End Libraries
+
+SocialOrange leverages several front-end libraries to create a responsive, interactive, and user-friendly experience. Below is a list of the key libraries used in the project along with a brief description of their purpose:
+
+### React
+
+- **Library**: [React](https://reactjs.org/)
+- **Purpose**: React is a JavaScript library for building user interfaces. It allows for the creation of reusable UI components, making the development process more efficient and the codebase easier to maintain.
+- **Usage**: The entire front-end of SocialOrange is built using React. Components such as `NavBar`, `SignInForm`, `SignUpForm`, `PostsPage`, `PostPage`, and `ProfilePage` are all React components.
+
+### React-DOM
+
+- **Library**: [React-DOM](https://reactjs.org/docs/react-dom.html)
+- **Purpose**: React-DOM is a package that provides DOM-specific methods that can be used at the top level of a web app to enable an efficient way of managing the DOM elements of the web page.
+- **Usage**: React-DOM is used to render React components into the DOM. The entry point of the application, typically `index.js`, uses React-DOM to render the root component.
+
+### React-Bootstrap
+
+- **Library**: [React-Bootstrap](https://react-bootstrap.github.io/)
+- **Purpose**: React-Bootstrap is a popular UI toolkit for React that provides Bootstrap components as React components. It helps in building responsive, mobile-first web pages.
+- **Usage**: Various UI components in SocialOrange, such as forms, buttons, and navigation bars, are built using React-Bootstrap to ensure a consistent and responsive design.
+
+### Axios
+
+- **Library**: [Axios](https://axios-http.com/)
+- **Purpose**: Axios is a promise-based HTTP client for JavaScript. It is used to make HTTP requests from the browser.
+- **Usage**: Axios is used in SocialOrange to interact with the backend API. It handles tasks such as user authentication, fetching posts, and submitting comments.
+
+### React-Router-Dom
+
+- **Library**: [React-Router-Dom](https://reactrouter.com/web/guides/quick-start)
+- **Purpose**: React-Router-Dom is a collection of navigational components that compose declaratively with your application. It enables dynamic routing in a React application.
+- **Usage**: React-Router-Dom is used to manage the routing of the application. It allows users to navigate between different pages such as the home page, profile page, and post details page.
+
+### Web Vitals
+
+- **Library**: [Web Vitals](https://web.dev/vitals/)
+- **Purpose**: Web Vitals is a library that measures the performance of web pages. It provides metrics that are essential for understanding and improving the user experience.
+- **Usage**: Web Vitals is used in SocialOrange to monitor and report on the performance of the web application, ensuring that it meets the necessary performance standards.
+
+### Font Awesome
+
+- **Library**: [Font Awesome](https://fontawesome.com/)
+- **Purpose**: Font Awesome is a popular icon toolkit that provides a wide range of icons.
+- **Usage**: Font Awesome is used in SocialOrange to add icons to various UI components, enhancing the visual appeal and user experience.
+
+### Google Fonts
+
+- **Library**: [Google Fonts](https://fonts.google.com/)
+- **Purpose**: Google Fonts is a library of free and open-source web fonts.
+- **Usage**: Google Fonts is used in SocialOrange to apply custom fonts to the application, ensuring a consistent and attractive typography.
+
+### Bootstrap
+
+- **Library**: [Bootstrap](https://getbootstrap.com/)
+- **Purpose**: Bootstrap is a popular CSS framework for developing responsive and mobile-first websites.
+- **Usage**: Bootstrap is used in conjunction with React-Bootstrap to style various components and ensure a responsive design.
+
+By leveraging these libraries, SocialOrange ensures a robust, efficient, and visually appealing front-end that enhances the overall user experience.
+
 ## React Component Usage
 
-The main components used in the application include:
+### Introduction
 
-- `NavBar`: The navigation bar component.
-- `SignInForm`: The sign-in form component.
-- `SignUpForm`: The sign-up form component.
-- `PostsPage`: The posts page component.
-- `PostPage`: The post detail page component.
-- `PostEditForm`: The post edit form component.
-- `ProfilePage`: The profile page component.
-- `ProfileEditForm`: The profile edit form component.
-- `UsernameForm`: The username edit form component.
-- `UserPasswordForm`: The user password edit form component.
-- `ProfileList`: The profile list component.
-- `NotFound`: The not found page component.
+Reusable components are a fundamental concept in React that allows developers to build modular, maintainable, and scalable applications. By creating components that can be reused across different parts of the application, we can reduce code duplication, improve consistency, and make the codebase easier to manage.
+
+### Project Structure
+
+The SocialOrange project is organized into several key directories and files. The main source code is located in the `src` directory, which contains the following subdirectories:
+
+- `components`: Contains reusable UI components.
+- `pages`: Contains page-level components that represent different views of the application.
+- `contexts`: Contains context providers for managing application state.
+- `hooks`: Contains custom React hooks.
+- `api`: Contains files related to API interactions.
+
+### Key Reusable Components
+
+### 1. Avatar
+
+The `Avatar` component is used to display user profile images. It is a simple, reusable component that can be used across different parts of the application.
+
+**File:** `src/components/Avatar.js`
+
+```javascript
+import React from 'react';
+import PropTypes from 'prop-types';
+
+const Avatar = ({ src, height = 50, width = 50 }) => {
+  return <img src={src} alt="avatar" height={height} width={width} />;
+};
+
+Avatar.propTypes = {
+  src: PropTypes.string.isRequired,
+  height: PropTypes.number,
+  width: PropTypes.number,
+};
+
+export default Avatar;
+```
+
+### 2. Button
+
+The `Button` component is a customizable button that can be used throughout the application. It supports different styles and sizes.
+
+**File:** `src/components/Button.js`
+
+```javascript
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from '../styles/Button.module.css';
+
+const Button = ({ children, onClick, className, ...props }) => {
+  return (
+    <button className={`${styles.Button} ${className}`} onClick={onClick} {...props}>
+      {children}
+    </button>
+  );
+};
+
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func,
+  className: PropTypes.string,
+};
+
+export default Button;
+```
+
+### 3. MoreDropdown
+
+The `MoreDropdown` component provides a dropdown menu with options for editing and deleting items. It is used in various parts of the application where such functionality is needed.
+
+**File:** `src/components/MoreDropdown.js`
+
+```javascript
+import React from 'react';
+import { Dropdown } from 'react-bootstrap';
+import { ThreeDots } from 'react-bootstrap-icons';
+
+const MoreDropdown = ({ handleEdit, handleDelete }) => {
+  return (
+    <Dropdown>
+      <Dropdown.Toggle as={ThreeDots} />
+      <Dropdown.Menu>
+        <Dropdown.Item onClick={handleEdit}>Edit</Dropdown.Item>
+        <Dropdown.Item onClick={handleDelete}>Delete</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+};
+
+export default MoreDropdown;
+```
+
+### Best Practices
+
+1. **Component Reusability:** Create components that can be reused across different parts of the application. Avoid hardcoding styles and content within components.
+
+2. **Prop Validation:** Use PropTypes to validate the props passed to components. This helps catch errors early and improves the readability of the code.
+
+3. **Separation of Concerns:** Keep components focused on a single responsibility. Avoid mixing presentation and logic within the same component.
+
+4. **Styling:** Use CSS modules or styled-components to scope styles to individual components. This helps prevent style conflicts and makes it easier to manage styles.
+
+5. **Documentation:** Document the purpose and usage of each component. This helps other developers understand how to use the components and promotes consistency.
+
+### Examples
+
+### Using the Avatar Component
+
+```javascript
+import React from 'react';
+import Avatar from '../components/Avatar';
+
+const UserProfile = ({ user }) => {
+  return (
+    <div>
+      <Avatar src={user.profileImage} height={100} width={100} />
+      <h2>{user.name}</h2>
+    </div>
+  );
+};
+
+export default UserProfile;
+```
+
+### Using the Button Component
+
+```javascript
+import React from 'react';
+import Button from '../components/Button';
+
+const SubmitButton = () => {
+  const handleSubmit = () => {
+    // Handle submit logic
+  };
+
+  return (
+    <Button onClick={handleSubmit} className="btn-primary">
+      Submit
+    </Button>
+  );
+};
+
+export default SubmitButton;
+```
+
+### Conclusion
+
+By following the best practices and using reusable components, we can build a more maintainable and scalable React application. The SocialOrange project leverages reusable components to ensure consistency and reduce code duplication. Understanding and utilizing these components will help you contribute effectively to the project.
+
+For more information on React and reusable components, refer to the [React documentation](https://reactjs.org/docs/components-and-props.html).
+
+---
+
+This guide should help you understand the use of reusable React components in the SocialOrange project. If you have any questions or need further assistance, feel free to reach out for support.
 
 ## API
 
@@ -183,21 +385,160 @@ npm test
 
 ## Deployment
 
-The project is deployed using Heroku. To deploy the application, follow these steps:
 
-1. Install the Heroku CLI.
-2. Log in to your Heroku account:
-   ```bash
-   heroku login
-   ```
-3. Create a new Heroku application:
-   ```bash
-   heroku create
-   ```
-4. Push the code to Heroku:
-   ```bash
-   git push heroku main
-   ```
+### Prerequisites
+
+Before you begin, ensure you have the following installed on your local machine:
+
+- [Git](https://git-scm.com/)
+- [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+- [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/)
+- [Python](https://www.python.org/) and [pip](https://pip.pypa.io/en/stable/)
+
+### Deployment Steps
+
+### 1. Clone the Repository
+
+First, clone the repository to your local machine:
+
+```bash
+git clone https://github.com/yourusername/socialorange.git
+cd socialorange
+```
+
+### 2. Set Up the Backend
+
+#### Install Python Dependencies
+
+Navigate to the backend directory and install the required Python packages:
+
+```bash
+cd backend
+pip install -r requirements.txt
+```
+
+#### Apply Migrations
+
+Apply the database migrations:
+
+```bash
+python manage.py migrate
+```
+
+#### Create a Superuser
+
+Create a superuser to access the Django admin panel:
+
+```bash
+python manage.py createsuperuser
+```
+
+### 3. Set Up the Frontend
+
+Navigate to the frontend directory and install the required npm packages:
+
+```bash
+cd ../frontend
+npm install
+```
+
+### 4. Prepare for Heroku Deployment
+
+#### Create a Heroku App
+
+Log in to Heroku and create a new app:
+
+```bash
+heroku login
+heroku create socialorange
+```
+
+#### Set Up Heroku Buildpacks
+
+Set the buildpacks for Python and Node.js:
+
+```bash
+heroku buildpacks:set heroku/python
+heroku buildpacks:add --index 1 heroku/nodejs
+```
+
+#### Configure Environment Variables
+
+Set the necessary environment variables for your Heroku app:
+
+```bash
+heroku config:set DJANGO_SECRET_KEY='your-secret-key'
+heroku config:set DJANGO_DEBUG=False
+heroku config:set ALLOWED_HOSTS='.herokuapp.com'
+heroku config:set DATABASE_URL='your-database-url'
+```
+
+#### Add Heroku Postgres
+
+Add the Heroku Postgres add-on to your app:
+
+```bash
+heroku addons:create heroku-postgresql:hobby-dev
+```
+
+### 5. Deploy to Heroku
+
+#### Commit Your Changes
+
+Ensure all your changes are committed:
+
+```bash
+git add .
+git commit -m "Prepare for Heroku deployment"
+```
+
+#### Push to Heroku
+
+Push your code to Heroku:
+
+```bash
+git push heroku main
+```
+
+#### Run Migrations on Heroku
+
+Run the database migrations on Heroku:
+
+```bash
+heroku run python manage.py migrate
+```
+
+#### Create a Superuser on Heroku
+
+Create a superuser on Heroku:
+
+```bash
+heroku run python manage.py createsuperuser
+```
+
+### 6. Access Your Deployed App
+
+Your app should now be deployed and accessible at `https://socialorange.herokuapp.com/`.
+
+## Additional Resources
+
+- [Heroku Documentation](https://devcenter.heroku.com/)
+- [Django Documentation](https://docs.djangoproject.com/)
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+
+## Troubleshooting
+
+If you encounter any issues during deployment, check the Heroku logs for more information:
+
+```bash
+heroku logs --tail
+```
+
+For further assistance, refer to the documentation links provided above or seek help from the community.
+
+---
+
+This guide should help you deploy your SocialOrange project to Heroku. If you have any questions or run into issues, feel free to reach out for support.
 
 ## Configuration
 
