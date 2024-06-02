@@ -657,10 +657,10 @@ Implementation:
 I have tried to fix these errors, but I cannot remove them.
 
 <p align="center">
-  <img src="readmeimages/errors.png" alt="errors">
+  <img src="readmeimages\errroooossss.png" alt="errors">
 </p>
 
-I have been able to access my app all the time until now but now I can't see everything in the app. Don't know what happened. 
+I have been able to access my app all the time until now but now I can't see everything in the app. Don't know what happened. Trying everything and cant get full access to my frontend.
 
 I get 401 and 404 errors and have tried to solve the problem but can't find a solution.
 
