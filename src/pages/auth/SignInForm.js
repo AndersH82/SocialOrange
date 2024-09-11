@@ -36,6 +36,7 @@ function SignInForm() {
     try {
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
       setCurrentUser(data.user);
+      localStorage.setItem("authToken", data.token); // Store the token in localStorage
       history.goBack();
     } catch (err) {
       setErrors(err.response?.data);

@@ -52,14 +52,12 @@ export const CurrentUserProvider = ({ children }) => {
         return Promise.reject(err);
       }
     );
-
-    axiosRes.interceptors.response.use(
-      (response) => response,
-      async (err) => {
-        if (err.response?.status === 401) {
+  
+    axiosRes.interceptors.request.use(
+      async (config) => {
+        if (shouldRefreshToken()) {
           try {
             await axios.post("/dj-rest-auth/token/refresh/");
-            return axios(err.config); // Retry the original request with the new token
           } catch (err) {
             setCurrentUser((prevCurrentUser) => {
               if (prevCurrentUser) {
@@ -68,8 +66,12 @@ export const CurrentUserProvider = ({ children }) => {
               return null;
             });
             removeTokenTimestamp();
+            return config;
           }
         }
+        return config;
+      },
+      (err) => {
         return Promise.reject(err);
       }
     );
