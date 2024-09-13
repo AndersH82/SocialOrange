@@ -6,9 +6,10 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.21.4",
-    "bootstrap": "^4.6.0",
-    "heroku": "^8.11.0",
+    "axios": "^1.7.7",
+    "bootstrap": "^5.3.3",
+    "heroku": "^9.2.1",
+    "js-cookie": "^3.0.5",
     "jwt-decode": "^3.1.2",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.3",
@@ -46,11 +47,10 @@
     "@babel/plugin-proposal-private-property-in-object": "7.21.11",
     "@types/react-router-dom": "^5.3.3",
     "msw": "^0.35.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^3.0.1"
   },
   "engines": {
     "node": "16.19.1",
     "npm": "8.19.3"
   }
-  
 }
