@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect } from "react";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom"; // Ensure you are using 'react-router-dom'
 
 export const useRedirect = (userAuthStatus) => {
   const history = useHistory();
@@ -16,7 +16,7 @@ export const useRedirect = (userAuthStatus) => {
       } catch (err) {
         // if user is not logged in, the code below will run
         if (userAuthStatus === "loggedOut") {
-          history.push("/");
+          history.push("/login"); // Redirect to login page if not logged in
         }
       }
     };
