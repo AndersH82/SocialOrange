@@ -25,7 +25,6 @@ import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/search.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
-
 function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
@@ -54,7 +53,7 @@ function ProfilePage() {
         setProfilePosts(profilePosts);
         setHasLoaded(true);
       } catch (err) {
-
+        console.log(err);
       }
     };
     fetchData();
@@ -71,7 +70,6 @@ function ProfilePage() {
             src={profile?.image}
           />
         </Col>
-        
         <Col lg={6}>
           <h3 className="m-2">{profile?.owner}</h3>
           <Row className="justify-content-center no-gutters">

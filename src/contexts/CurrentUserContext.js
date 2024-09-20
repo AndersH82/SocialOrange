@@ -15,13 +15,11 @@ export const CurrentUserProvider = ({ children }) => {
   const history = useHistory();
 
   const handleMount = async () => {
-    if (shouldRefreshToken()) {
-      try {
-        const { data } = await axiosRes.get("/dj-rest-auth/user/");
-        setCurrentUser(data);
-      } catch (err) {
-      
-      }
+    try {
+      const { data } = await axiosRes.get("/dj-rest-auth/user/");
+      setCurrentUser(data);
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -52,10 +50,11 @@ export const CurrentUserProvider = ({ children }) => {
         return Promise.reject(err);
       }
     );
-  
-    axiosRes.interceptors.request.use(
-      async (config) => {
-        if (shouldRefreshToken()) {
+
+    axiosRes.interceptors.response.use(
+      (response) => response,
+      async (err) => {
+        if (err.response?.status === 401) {
           try {
             await axios.post("/dj-rest-auth/token/refresh/");
           } catch (err) {
@@ -66,12 +65,9 @@ export const CurrentUserProvider = ({ children }) => {
               return null;
             });
             removeTokenTimestamp();
-            return config;
           }
+          return axios(err.config);
         }
-        return config;
-      },
-      (err) => {
         return Promise.reject(err);
       }
     );
